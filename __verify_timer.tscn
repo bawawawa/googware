@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://timer_screen.gd" id="1_script"]
+
+[node name="TimerScreen" type="Node"]
+script = ExtResource("1_script")
+
+[node name="DerpContainer" type="HBoxContainer" parent="."]
+
+[node name="Derp" type="TextureRect" parent="DerpContainer"]
+
+[node name="Derp2" type="TextureRect" parent="DerpContainer"]
+
+[node name="Derp3" type="TextureRect" parent="DerpContainer"]
+
+[node name="Derp4" type="TextureRect" parent="DerpContainer"]
+
+[node name="Derp5" type="TextureRect" parent="DerpContainer"]
+
+[node name="Level" type="RichTextLabel" parent="."]
+
+[node name="Timer" type="RichTextLabel" parent="."]
