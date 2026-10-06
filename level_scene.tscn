@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://0mr46p1pay34" path="res://level_scene.gd" id="1_3mivm"]
 [ext_resource type="Texture2D" uid="uid://0w73wx6jvfil" path="res://18965820.jpg" id="1_187gu"]
 [ext_resource type="Texture2D" uid="uid://buqvpipgbr451" path="res://derp.jpg" id="2_3mivm"]
+[ext_resource type="AudioStream" uid="uid://hms7c36gam3d" path="res://addons/price.mp3" id="4_lwxgr"]
 
 [node name="Node2D" type="Node2D" unique_id=697301961]
 script = ExtResource("1_3mivm")
@@ -57,3 +58,6 @@ offset_bottom = 567.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 61
 text = "0.0"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1647467229]
+stream = ExtResource("4_lwxgr")

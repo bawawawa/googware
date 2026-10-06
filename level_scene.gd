@@ -7,18 +7,33 @@ extends Node2D
 @onready var derp5: TextureRect = $DerpContainer/Derp5
 @onready var level: RichTextLabel = $Level
 @onready var timer: RichTextLabel = $Timer
-
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 var time
+var advancing := false
 
 func _ready() -> void:
-	await Timer(5.0) 
-	
-	if Global.minigames_done < 3:
-		Global.minigames_done = Global.minigames_done +1
-		get_tree().change_scene_to_file("res://node_2d.tscn")
+	audio_player.play()
+	await wait(5.0)
+	advance()
 
+func advance() -> void:
+	if advancing:
+		return
+	advancing = true
+
+	if Global.minigames_done < 3:
+		Global.minigames_done = Global.minigames_done + 1
+		get_tree().change_scene_to_file(next_level())
 	else:
-		get_tree().change_scene_to_file("res://title_screen.tscn") 
+		get_tree().change_scene_to_file("res://title_screen.tscn")
+
+func next_level() -> String:
+	if Global.minigames_done % 2 == 1:
+		return "res://minigame_1.tscn"
+	return "res://minigame_2.tscn"
+
+func complete_level() -> void:
+	advance()
 	
 
 func _process(delta: float) -> void:
@@ -44,16 +59,14 @@ func _process(delta: float) -> void:
 	timer.text = str(time) 
 	level.text = "Level " + str(Global.minigames_done) 
 
-func Timer(start_time: float): 
-	
-	time = start_time 
-	
-	while time > 0.0: 
+func countdown(start_time: float):
+	time = start_time
+	while time > 0.0:
 		await wait(0.1)
-		time -= 0.1 
-		
-	
+		time -= 0.1
 	return
 
-func wait(seconds: float) -> void: 
+func wait(seconds: float) -> void:
+	if not is_inside_tree():
+		return
 	await get_tree().create_timer(seconds).timeout

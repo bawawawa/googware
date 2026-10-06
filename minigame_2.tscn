@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://doast7cnm101x"]
+
+[ext_resource type="Texture2D" uid="uid://c8jmxieth2py2" path="res://images (9).jpg" id="1_5x31c"]
+[ext_resource type="Script" uid="uid://blrb4by4yysyp" path="res://minigame_2.gd" id="1_u32kt"]
+[ext_resource type="Texture2D" uid="uid://buqvpipgbr451" path="res://derp.jpg" id="2_3qiw4"]
+[ext_resource type="Script" uid="uid://mo8cfmvupdbp" path="res://button_1.gd" id="3_gc66t"]
+[ext_resource type="Script" uid="uid://cmd51tnn662tf" path="res://button_2.gd" id="4_3qiw4"]
+[ext_resource type="PackedScene" uid="uid://bfrgymgykgmj2" path="res://themedtimer.tscn" id="4_n6gid"]
+[ext_resource type="Script" uid="uid://buh6tbsksger2" path="res://button_3.gd" id="5_gc66t"]
+[ext_resource type="Script" uid="uid://bdgt323ns2bwa" path="res://button_4.gd" id="6_n6gid"]
+[ext_resource type="AudioStream" uid="uid://bg78j0tkp4lgk" path="res://imgay.mp3" id="9_v84ot"]
+
+[node name="Minigame_2" type="Node2D" unique_id=784412658]
+script = ExtResource("1_u32kt")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1597726640]
+offset_left = 6.8417263
+offset_top = 7.843307
+offset_right = 560.84174
+offset_bottom = 561.8433
+scale = Vector2(2.052555, 1.1751925)
+texture = ExtResource("1_5x31c")
+
+[node name="Button_1" type="TextureButton" parent="." unique_id=1515044640]
+offset_left = 74.00001
+offset_top = 49.0
+offset_right = 1610.0
+offset_bottom = 2097.0
+scale = Vector2(0.107396625, 0.081363395)
+texture_normal = ExtResource("2_3qiw4")
+script = ExtResource("3_gc66t")
+
+[node name="Button_2" type="TextureButton" parent="." unique_id=882152661]
+offset_left = 899.0001
+offset_top = 85.0
+offset_right = 2435.0
+offset_bottom = 2133.0
+scale = Vector2(0.107396625, 0.081363395)
+texture_normal = ExtResource("2_3qiw4")
+script = ExtResource("4_3qiw4")
+
+[node name="Button_3" type="TextureButton" parent="." unique_id=73193006]
+offset_left = 148.0
+offset_top = 381.0
+offset_right = 1684.0
+offset_bottom = 2429.0
+scale = Vector2(0.107396625, 0.081363395)
+texture_normal = ExtResource("2_3qiw4")
+script = ExtResource("5_gc66t")
+
+[node name="Button_4" type="TextureButton" parent="." unique_id=604371028]
+offset_left = 546.99994
+offset_top = 270.0
+offset_right = 2083.0
+offset_bottom = 2318.0
+scale = Vector2(0.107396625, 0.081363395)
+texture_normal = ExtResource("2_3qiw4")
+script = ExtResource("6_n6gid")
+
+[node name="Node2D" parent="." unique_id=1221354574 instance=ExtResource("4_n6gid")]
+position = Vector2(187, 428)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=94000396]
+stream = ExtResource("9_v84ot")
+
+[connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
+[connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
+[connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]
+[connection signal="pressed" from="Button_4" to="Button_4" method="_on_pressed"]

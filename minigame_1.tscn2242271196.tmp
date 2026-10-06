@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://bdur6q67mf47j"]
+
+[ext_resource type="Script" uid="uid://cj5uyrm2g68ep" path="res://platformer_level.gd" id="1_or1ld"]
+[ext_resource type="Texture2D" uid="uid://c8jmxieth2py2" path="res://images (9).jpg" id="2_jife1"]
+[ext_resource type="PackedScene" uid="uid://bip34pc6cn3qj" path="res://player.tscn" id="3_s0dnv"]
+[ext_resource type="PackedScene" uid="uid://bfrgymgykgmj2" path="res://themedtimer.tscn" id="4_vlki2"]
+[ext_resource type="Script" uid="uid://o28nmsv4bjn8" path="res://derp.gd" id="5_ighjx"]
+[ext_resource type="Texture2D" uid="uid://buqvpipgbr451" path="res://derp.jpg" id="6_261h4"]
+[ext_resource type="AudioStream" uid="uid://cf6x24sciw3yv" path="res://Obunga.mp3" id="7_jife1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gfiq"]
+
+[sub_resource type="Animation" id="Animation_0hol4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(119, 209.00002)]
+}
+
+[sub_resource type="Animation" id="Animation_q6r6c"]
+resource_name = "float"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(119, 209.00002), Vector2(120, 182.00002)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdubu"]
+_data = {
+&"RESET": SubResource("Animation_0hol4"),
+&"float": SubResource("Animation_q6r6c")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0gfiq"]
+
+[node name="Node2D" type="Node2D" unique_id=921419636]
+script = ExtResource("1_or1ld")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1549534574]
+offset_left = 6.8417263
+offset_top = 7.843307
+offset_right = 560.84174
+offset_bottom = 561.8433
+scale = Vector2(2.052555, 1.1751925)
+texture = ExtResource("2_jife1")
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1146116152]
+scale = Vector2(3.482838, 1.0220537)
+
+[node name="ColorRect" type="ColorRect" parent="Platform" unique_id=1680014635]
+offset_left = 334.16983
+offset_top = 647.1288
+offset_right = 374.16983
+offset_bottom = 687.1288
+scale = Vector2(-8.379246, -0.77821916)
+color = Color(0.7823331, 0.34110704, 0.6864052, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=381737139]
+position = Vector2(167.16983, 630.1287)
+scale = Vector2(16.617453, 1.4356279)
+shape = SubResource("RectangleShape2D_0gfiq")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=973714119]
+position = Vector2(398, 40.999996)
+scale = Vector2(1.1815327, 0.74274963)
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1812799389]
+offset_left = 334.16983
+offset_top = 647.1288
+offset_right = 374.16983
+offset_bottom = 687.1288
+scale = Vector2(-8.379246, -0.77821916)
+color = Color(0.7823331, 0.34110704, 0.6864052, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1384344775]
+position = Vector2(167.16983, 630.1287)
+scale = Vector2(16.617453, 1.4356279)
+shape = SubResource("RectangleShape2D_0gfiq")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=1825479735]
+position = Vector2(2, -146)
+scale = Vector2(1.1815327, 0.74274963)
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=7886750]
+offset_left = 334.16983
+offset_top = 647.1288
+offset_right = 374.16983
+offset_bottom = 687.1288
+scale = Vector2(-8.379246, -0.77821916)
+color = Color(0.7823331, 0.34110704, 0.6864052, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1571898120]
+position = Vector2(167.16983, 630.1287)
+scale = Vector2(16.617453, 1.4356279)
+shape = SubResource("RectangleShape2D_0gfiq")
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=1063090769]
+position = Vector2(740, -138)
+scale = Vector2(1.1815327, 0.74274963)
+
+[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=84666198]
+offset_left = 334.16983
+offset_top = 647.1288
+offset_right = 374.16983
+offset_bottom = 687.1288
+scale = Vector2(-8.379246, -0.77821916)
+color = Color(0.7823331, 0.34110704, 0.6864052, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=1573156067]
+position = Vector2(167.16983, 630.1287)
+scale = Vector2(16.617453, 1.4356279)
+shape = SubResource("RectangleShape2D_0gfiq")
+
+[node name="Player" parent="." unique_id=111844552 instance=ExtResource("3_s0dnv")]
+position = Vector2(174, 543)
+scale = Vector2(0.73943895, 0.65797454)
+
+[node name="ThemedTimer" parent="." unique_id=916949286 instance=ExtResource("4_vlki2")]
+position = Vector2(188, 391)
+
+[node name="derp" type="Node2D" parent="." unique_id=995460676]
+script = ExtResource("5_ighjx")
+
+[node name="TextureRect" type="TextureRect" parent="derp" unique_id=1419568919]
+offset_left = 119.0
+offset_top = 209.00002
+offset_right = 1655.0
+offset_bottom = 2257.0
+scale = Vector2(0.061300825, 0.04201315)
+texture = ExtResource("6_261h4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="derp" unique_id=207412449]
+libraries/ = SubResource("AnimationLibrary_kdubu")
+
+[node name="Area2D" type="Area2D" parent="derp" unique_id=169090260]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="derp/Area2D" unique_id=736913765]
+position = Vector2(166, 232)
+scale = Vector2(6.921432, 7.548157)
+shape = SubResource("CircleShape2D_0gfiq")
+
+[node name="derp2" type="Node2D" parent="." unique_id=1814465451]
+position = Vector2(425, 188)
+script = ExtResource("5_ighjx")
+
+[node name="TextureRect" type="TextureRect" parent="derp2" unique_id=230164945]
+offset_left = 119.0
+offset_top = 209.00002
+offset_right = 1655.0
+offset_bottom = 2257.0
+scale = Vector2(0.061300825, 0.04201315)
+texture = ExtResource("6_261h4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="derp2" unique_id=998694343]
+libraries/ = SubResource("AnimationLibrary_kdubu")
+
+[node name="Area2D" type="Area2D" parent="derp2" unique_id=2115968272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="derp2/Area2D" unique_id=19046104]
+position = Vector2(166, 232)
+scale = Vector2(6.921432, 7.548157)
+shape = SubResource("CircleShape2D_0gfiq")
+
+[node name="derp3" type="Node2D" parent="." unique_id=1704473229]
+position = Vector2(785, 10)
+script = ExtResource("5_ighjx")
+
+[node name="TextureRect" type="TextureRect" parent="derp3" unique_id=1938305495]
+offset_left = 119.0
+offset_top = 209.00002
+offset_right = 1655.0
+offset_bottom = 2257.0
+scale = Vector2(0.061300825, 0.04201315)
+texture = ExtResource("6_261h4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="derp3" unique_id=654044951]
+libraries/ = SubResource("AnimationLibrary_kdubu")
+
+[node name="Area2D" type="Area2D" parent="derp3" unique_id=1762273097]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="derp3/Area2D" unique_id=186370225]
+position = Vector2(166, 232)
+scale = Vector2(6.921432, 7.548157)
+shape = SubResource("CircleShape2D_0gfiq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=396556520]
+stream = ExtResource("7_jife1")
+
+[connection signal="derp_collected" from="derp" to="." method="derp_collect"]
+[connection signal="derp_collected" from="derp2" to="." method="derp_collect"]
+[connection signal="derp_collected" from="derp3" to="." method="derp_collect"]

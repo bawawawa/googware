@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://clho3iqxg1wtf"]
+
+[ext_resource type="Script" uid="uid://cx0ya0cddj4ta" path="res://winner.gd" id="1_rnxuv"]
+[ext_resource type="AudioStream" uid="uid://uinh567lad6r" path="res://youwon.mp3" id="2_dtg64"]
+[ext_resource type="Texture2D" uid="uid://cliwnck11g7lf" path="res://fack u.jpg" id="3_yfl3x"]
+
+[node name="Node2D" type="Node2D" unique_id=894942110]
+script = ExtResource("1_rnxuv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=643127859]
+stream = ExtResource("2_dtg64")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=634096752]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.56220937, 0.43004754)
+texture = ExtResource("3_yfl3x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1597073298]
+offset_left = 349.0
+offset_top = 92.0
+offset_right = 729.0
+offset_bottom = 281.0
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/normal_font_size = 78
+text = "You won! "
+
+[node name="Timer" type="Timer" parent="." unique_id=207694842]
+wait_time = 5.0
+autostart = true
