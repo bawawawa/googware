@@ -1,52 +1,52 @@
 [gd_scene format=3 uid="uid://cb1y5unpthha0"]
 
 [ext_resource type="Script" uid="uid://0mr46p1pay34" path="res://level_scene.gd" id="1_3mivm"]
-[ext_resource type="Texture2D" uid="uid://0w73wx6jvfil" path="res://18965820.jpg" id="1_187gu"]
-[ext_resource type="Texture2D" uid="uid://buqvpipgbr451" path="res://derp.jpg" id="2_3mivm"]
+[ext_resource type="Texture2D" uid="uid://v6clt03pr87g" path="res://new york apartment.jpg" id="2_3mivm"]
+[ext_resource type="Texture2D" uid="uid://co3i7lsu2y4wb" path="res://soggy.jpg" id="3_lwxgr"]
 [ext_resource type="AudioStream" uid="uid://hms7c36gam3d" path="res://addons/price.mp3" id="4_lwxgr"]
 
 [node name="Node2D" type="Node2D" unique_id=697301961]
 script = ExtResource("1_3mivm")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2141289354]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.23157127, 0.16365293)
-texture = ExtResource("1_187gu")
+offset_right = 1999.0
+offset_bottom = 2048.0
+scale = Vector2(0.57461494, 0.31155226)
+texture = ExtResource("2_3mivm")
 
 [node name="DerpContainer" type="HBoxContainer" parent="." unique_id=337370489]
 offset_left = 107.00002
 offset_top = 60.0
 offset_right = 7803.0
 offset_bottom = 2108.0
-scale = Vector2(0.12718882, 0.126351)
+scale = Vector2(0.12252998, 0.12528844)
 
 [node name="Derp" type="TextureRect" parent="DerpContainer" unique_id=2132341833]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("3_lwxgr")
 
 [node name="Derp2" type="TextureRect" parent="DerpContainer" unique_id=1991700014]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("3_lwxgr")
 
 [node name="Derp3" type="TextureRect" parent="DerpContainer" unique_id=991245936]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("3_lwxgr")
 
 [node name="Derp4" type="TextureRect" parent="DerpContainer" unique_id=675364400]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("3_lwxgr")
 
 [node name="Derp5" type="TextureRect" parent="DerpContainer" unique_id=2125874630]
 layout_mode = 2
-texture = ExtResource("2_3mivm")
+texture = ExtResource("3_lwxgr")
 
 [node name="Level" type="RichTextLabel" parent="." unique_id=1476774975]
 offset_left = 476.0
 offset_top = 349.0
 offset_right = 685.0
 offset_bottom = 460.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
 theme_override_font_sizes/normal_font_size = 54
 text = "Level #"
 
@@ -55,7 +55,7 @@ offset_left = 513.0
 offset_top = 426.0
 offset_right = 850.0
 offset_bottom = 567.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
 theme_override_font_sizes/normal_font_size = 61
 text = "0.0"
 

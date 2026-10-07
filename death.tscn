@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://8bo8syp565yp"]
+
+[ext_resource type="Texture2D" uid="uid://64ge1yfrygo0" path="res://images (10).jpg" id="1_531me"]
+[ext_resource type="Script" uid="uid://cqyx8ko121c1f" path="res://death.gd" id="1_4868a"]
+[ext_resource type="Texture2D" uid="uid://utgpm0oe0irw" path="res://sad.png" id="2_4868a"]
+[ext_resource type="AudioStream" uid="uid://brnlxh0irk7t8" path="res://sadsong.mp3" id="3_f0m10"]
+
+[node name="Node2D" type="Node2D" unique_id=942778451]
+script = ExtResource("1_4868a")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1839776116]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.1786134, 1.2474685)
+texture = ExtResource("1_531me")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1783601509]
+offset_left = 98.0
+offset_top = 99.0
+offset_right = 1192.0
+offset_bottom = 403.0
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/normal_font_size = 60
+text = "oh no! you lost all of your lives!!!!"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1088824928]
+offset_left = 398.0
+offset_top = 270.99997
+offset_right = 1206.0
+offset_bottom = 1347.0
+scale = Vector2(0.47834668, 0.3258003)
+texture = ExtResource("2_4868a")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1790281551]
+offset_left = 398.0
+offset_top = 556.0
+offset_right = 1006.0
+offset_bottom = 652.0
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/normal_font_size = 39
+text = "me when you lose :("
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2039020143]
+stream = ExtResource("3_f0m10")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1921190644]
+wait_time = 5.0
+autostart = true

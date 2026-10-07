@@ -13,7 +13,7 @@ var advancing := false
 
 func _ready() -> void:
 	audio_player.play()
-	await wait(5.0)
+	await countdown(5.0)
 	advance()
 
 func advance() -> void:
@@ -21,16 +21,18 @@ func advance() -> void:
 		return
 	advancing = true
 
+	if Global.lives <= 0:
+		get_tree().change_scene_to_file("res://death.tscn")
+		return
+
 	if Global.minigames_done < 3:
 		Global.minigames_done = Global.minigames_done + 1
 		get_tree().change_scene_to_file(next_level())
 	else:
-		get_tree().change_scene_to_file("res://title_screen.tscn")
+		get_tree().change_scene_to_file("res://winner.tscn")
 
 func next_level() -> String:
-	if Global.minigames_done % 2 == 1:
-		return "res://minigame_1.tscn"
-	return "res://minigame_2.tscn"
+	return "res://minigame_" + str(Global.minigames_done) + ".tscn"
 
 func complete_level() -> void:
 	advance()

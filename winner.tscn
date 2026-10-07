@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cx0ya0cddj4ta" path="res://winner.gd" id="1_rnxuv"]
 [ext_resource type="AudioStream" uid="uid://uinh567lad6r" path="res://youwon.mp3" id="2_dtg64"]
 [ext_resource type="Texture2D" uid="uid://cliwnck11g7lf" path="res://fack u.jpg" id="3_yfl3x"]
+[ext_resource type="Texture2D" uid="uid://gvlje0ykpg7k" path="res://President_Barack_Obama.jpg" id="4_dtg64"]
 
 [node name="Node2D" type="Node2D" unique_id=894942110]
 script = ExtResource("1_rnxuv")
@@ -26,6 +27,21 @@ theme_override_constants/outline_size = 16
 theme_override_font_sizes/normal_font_size = 78
 text = "You won! "
 
-[node name="Timer" type="Timer" parent="." unique_id=207694842]
-wait_time = 5.0
-autostart = true
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1369470375]
+offset_left = 20.999998
+offset_top = 373.0
+offset_right = 2708.0
+offset_bottom = 3729.0
+scale = Vector2(0.12157971, 0.083065584)
+texture_normal = ExtResource("4_dtg64")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1587435559]
+offset_left = 295.0
+offset_top = 539.0
+offset_right = 1357.0
+offset_bottom = 728.0
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/normal_font_size = 68
+text = "<- Click Obama to go back"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

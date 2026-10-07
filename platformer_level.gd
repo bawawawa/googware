@@ -29,7 +29,7 @@ func finish(timed_out: bool) -> void:
 		Global.lives -= 1
 
 	if Global.minigames_done > 3:
-		get_tree().change_scene_to_file("res://title_screen.tscn")
+		get_tree().change_scene_to_file("res://winner.tscn")
 	else:
 		get_tree().change_scene_to_file("res://level_scene.tscn")
 

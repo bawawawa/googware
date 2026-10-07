@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://vjc0ccj7it4"]
 
 [ext_resource type="Script" uid="uid://chvr38pccsdif" path="res://title_screen.gd" id="1_ak2if"]
-[ext_resource type="Texture2D" uid="uid://0w73wx6jvfil" path="res://18965820.jpg" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://u8w3opi2835s" path="res://bugs when you lift up the rock.jpg" id="2_05l2w"]
 [ext_resource type="AudioStream" uid="uid://dawg3afew3tdd" path="res://intro.mp3" id="3_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://c6eel45c5n4m2" path="res://goog.webp" id="4_hafda"]
 
 [node name="TitleScreen" type="Node2D" unique_id=1502383718]
 script = ExtResource("1_ak2if")
@@ -13,7 +14,7 @@ offset_top = -3.000122
 offset_right = 5004.0
 offset_bottom = 3997.0
 scale = Vector2(0.23126268, 0.16324645)
-texture = ExtResource("1_v6p8y")
+texture = ExtResource("2_05l2w")
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=679618944]
 clip_contents = false
@@ -37,12 +38,6 @@ theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 26
 text = "Start"
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=60233406]
-layout_mode = 2
-theme_override_constants/outline_size = 14
-theme_override_font_sizes/font_size = 26
-text = "Settings"
-
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=740495476]
 layout_mode = 2
 theme_override_constants/outline_size = 14
@@ -51,6 +46,14 @@ text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=518578379]
 stream = ExtResource("3_ig5kc")
+
+[node name="Goog" type="TextureRect" parent="." unique_id=1533268330]
+offset_left = 276.0
+offset_top = 40.000004
+offset_right = 1300.0
+offset_bottom = 1064.0
+scale = Vector2(0.28143194, 0.14057483)
+texture = ExtResource("4_hafda")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
