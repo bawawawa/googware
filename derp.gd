@@ -9,7 +9,6 @@ extends Node2D
 signal derp_collected
 
 func _process(delta: float) -> void:
-
 	if player_area.overlaps_area(self_area):
 		if self.visible:
 			emit_signal("derp_collected")
